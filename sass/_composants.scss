@@ -1,0 +1,80 @@
+/****** Footer ***********/
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: $grey;
+  color: $white;
+  padding: 22px 25px;
+  gap: 16px;
+  margin: 0;
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: row-reverse;
+    padding: 30px 25px;
+  }
+
+  .logo-footer {
+    font-family: Shrikhand, sans-serif;
+    font-weight: 700;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+
+      .liens-footer-restaurant {
+        font-weight: 500;
+        color: $white;
+        padding-left: 11px;
+
+        @media screen and (min-width: 1024px) {
+          width: 168px;
+        }
+      }
+
+      .liens-footer-partenaire {
+        padding-left: 5px;
+
+        @media screen and (min-width: 1024px) {
+          width: 168px;
+        }
+      }
+
+      .text-footer {
+        color: $white;
+        text-decoration: none;
+
+        @media screen and (min-width: 1024px) {
+          width: 130px;
+        }
+      }
+
+      .contact {
+        @media screen and (min-width: 1024px) {
+          width: 130px;
+        }
+      }
+
+      .text-footer:hover,
+      .liens-footer-restaurant:hover,
+      .liens-footer-partenaire:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

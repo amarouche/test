@@ -1,0 +1,232 @@
+@import "../variables";
+@import "../mixins";
+@import "../composants";
+
+/****** Ajout d'une classe d'animation pour chaque groupe avec des décalages de temps ***********/
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.entrees {
+  animation: fadeInUp 0.5s ease 0.5s both;
+}
+
+.plats {
+  animation: fadeInUp 0.5s ease 1.5s both;
+}
+
+.desserts {
+  animation: fadeInUp 0.5s ease 2.5s both;
+}
+
+/****** Header: Logo/aliment + icone "Go back" ***********/
+.main-container {
+  margin: 0 auto;
+  $white: #ffffff;
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.fa-arrow-left {
+  position: absolute;
+  top: 26px;
+  left: 17px;
+  cursor: pointer;
+}
+
+.return_link {
+  position: relative;
+  z-index: 1;
+}
+
+/****** Bannière ***********/
+.banner {
+  width: 100%;
+  object-fit: cover;
+  @media screen and (min-width: 1024px) {
+    max-height: 383px;
+  }
+}
+
+/****** Les menus ***********/
+main {
+  width: 100%;
+  @media screen and (min-width: 1024px) {
+    .le-menu {
+      margin: -51px auto 0 auto;
+    }
+  }
+}
+
+.le-menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: $background;
+  padding: 24px 13px 0 13px;
+  border-radius: 50px 50px 0 0;
+  margin-top: -51px;
+  @media screen and (min-width: 1024px) {
+    max-width: 1055px;
+    text-align: center;
+  }
+}
+
+.titre-du-menu {
+  margin: 0;
+  font-family: Shrikhand;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.position_heart_restaurant {
+  top: 30px;
+  right: 25px;
+  @media screen and (min-width: 1024px) {
+    right: 270px;
+  }
+}
+
+/****** Entrées/Plats/Desserts ***********/
+.cartes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+
+  @media screen and (min-width: 1024px) {
+    align-self: center;
+    width: 63%;
+  }
+}
+
+.titre-article-restaurant {
+  padding-bottom: 5px;
+  padding-top: 40px;
+  width: 40px;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    padding-bottom: 3px;
+    background-color: $green;
+    margin-top: 19px;
+  }
+}
+
+/****** Cartes ***********/
+.bouton {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15px;
+  background: $white;
+  box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: margin-right 0.3s ease-in-out;
+
+  .noms {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    .nom-du-plat {
+      font-size: 18px;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .description-du-plat {
+      font-size: 15.04px;
+      font-weight: 300;
+      margin: 0;
+    }
+  }
+}
+
+.prix {
+  font-size: 15.04px;
+  font-family: Roboto;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column-reverse;
+  margin-right: 0;
+  transition: margin-right 0.3s ease-in-out;
+}
+
+.bouton:hover .prix {
+  margin-right: 23%;
+
+  @media screen and (min-width: 428px) {
+    margin-right: 17%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-right: 12%;
+  }
+}
+
+.bouton-icone {
+  background-color: $green;
+  padding: 0 30px;
+  border-radius: 0 15px 15px 0;
+  position: absolute;
+  right: 0;
+  top: 0%;
+  height: 100%;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+
+.bouton:hover .bouton-icone {
+  transform: translateX(0%);
+  color: white;
+  font-size: 20px;
+}
+
+.bouton-icone {
+  color: $white;
+  font-size: 20px;
+}
+
+/****** button Gradient ***********/
+.btnGradient-commander {
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  color: $white;
+  padding: 13px 18.75px 13px 18.75px;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 186px;
+  border: none;
+  margin-top: 40px;
+}
+
+.btnGradient-commander:hover {
+  cursor: pointer;
+  filter: brightness(1.1); // Éclaircit l'image au survol
+}

@@ -1,0 +1,321 @@
+@charset "UTF-8";
+/****** General ***********/
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+/****** Déclaration des variables ***********/
+/****** mixin ***********/
+/****** Footer ***********/
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #353535;
+  color: #ffffff;
+  padding: 22px 25px;
+  gap: 16px;
+  margin: 0;
+}
+@media screen and (min-width: 1024px) {
+  footer {
+    flex-direction: row-reverse;
+    padding: 30px 25px;
+  }
+}
+footer .logo-footer {
+  font-family: Shrikhand, sans-serif;
+  font-weight: 700;
+  margin: 0;
+  font-size: 18px;
+}
+footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+@media screen and (min-width: 1024px) {
+  footer ul {
+    flex-direction: row;
+  }
+}
+footer ul li {
+  display: flex;
+  align-items: center;
+}
+footer ul li .liens-footer-restaurant {
+  font-weight: 500;
+  color: #ffffff;
+  padding-left: 11px;
+}
+footer ul li .liens-footer-partenaire {
+  padding-left: 5px;
+}
+footer ul li .text-footer {
+  color: #ffffff;
+  text-decoration: none;
+}
+footer ul li .text-footer:hover,
+footer ul li .liens-footer-restaurant:hover,
+footer ul li .liens-footer-partenaire:hover {
+  text-decoration: underline;
+}
+
+/****** Ajout d'une classe d'animation pour chaque groupe avec des décalages de temps ***********/
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.entrees {
+  animation: fadeInUp 0.5s ease 0.5s both;
+}
+
+.plats {
+  animation: fadeInUp 0.5s ease 1.5s both;
+}
+
+.desserts {
+  animation: fadeInUp 0.5s ease 2.5s both;
+}
+
+/****** Header: Logo/aliment + icone "Go back" ***********/
+.main-container {
+  margin: 0 auto;
+}
+@media screen and (min-width: 1024px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.fa-arrow-left {
+  position: absolute;
+  top: 26px;
+  left: 17px;
+  cursor: pointer;
+}
+
+.return_link {
+  position: relative;
+  z-index: 1;
+}
+
+/****** Bannière ***********/
+.banner {
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+@media screen and (min-width: 1024px) {
+  .banner {
+    max-height: 383px;
+  }
+}
+
+/****** Les menus ***********/
+main {
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  main .le-menu {
+    margin: -51px auto 0 auto;
+  }
+}
+
+.le-menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background: #f6f6f6;
+  padding: 24px 13px 0 13px;
+  border-radius: 50px 50px 0 0;
+  margin-top: -51px;
+}
+@media screen and (min-width: 1024px) {
+  .le-menu {
+    max-width: 1055px;
+    text-align: center;
+  }
+}
+
+.titre-du-menu {
+  margin: 0;
+}
+
+.position_heart_restaurant {
+  top: 22px;
+  left: 312px;
+}
+@media screen and (min-width: 1024px) {
+  .position_heart_restaurant {
+    right: 35px;
+  }
+}
+
+/****** Entrées/Plats/Desserts ***********/
+.cartes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.titre-article-restaurant {
+  padding-bottom: 5px;
+  width: 40px;
+  font-size: 16px;
+  font-family: Roboto, sans serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.titre-article-restaurant::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  padding-bottom: 3px;
+  background-color: #99e2d0;
+  margin-top: 19px;
+}
+
+/****** Cartes ***********/
+.bouton {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  border: 2px solid #ffffff;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bouton:hover .checkbox {
+  transition-delay: 300ms;
+  width: 5%;
+}
+
+.bouton:hover .prix {
+  margin-right: 9%;
+}
+
+.noms {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.nom-du-plat {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.description-du-plat {
+  font-size: 15.04px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.nom-du-plat,
+.description-du-plat {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.prix {
+  display: flex;
+  font-size: 15.04px;
+  font-family: Roboto;
+  font-weight: 700;
+  transition: margin-right 0.3s ease-in-out;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 15px 15px 0;
+  padding: 0 13px;
+  height: 100%;
+  width: 0%;
+  opacity: 0;
+  transition: opacity 0.001s ease-in-out;
+}
+
+.checkbox:hover {
+  width: 5.6%;
+  opacity: 1;
+}
+
+.checkbox input {
+  opacity: 0;
+}
+
+.checkbox label {
+  cursor: pointer;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  left: 25%;
+  top: 25%;
+  transition: opacity 0.3s ease-in-out;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox label::before {
+  content: "";
+  border: solid #99e2d0;
+  width: 10px;
+  height: 5px;
+  border-width: 0 2px 2px 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.checkbox input:checked + label::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/****** button Gradient ***********/
+.btnGradient-commander {
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 13px 18.75px 13px 18.75px;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 186px;
+  border: none;
+}
+
+.btnGradient-commander:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+} /*# sourceMappingURL=restaurants.css.map */
